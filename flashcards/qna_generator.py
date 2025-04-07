@@ -1,27 +1,37 @@
 from transformers import pipeline
 
-qg_pipeline = pipeline("text2text-generation", model="iarfmoose/t5-base-question-generator")
+# Load the question generation model (e.g., T5 or similar)
+qg_pipeline = pipeline("text2text-generation", model="valhalla/t5-base-qg-hl")
+
+# Also the QA model for fallback answers
+qa_pipeline = pipeline("question-answering", model="distilbert-base-cased-distilled-squad")
 
 def generate_qna(summary_text):
-    """
-    Generates QnA pairs using a text2text-generation pipeline with T5 model.
-    """
-    formatted_input = f"generate questions: {summary_text}"
+    print("Generating QnA for:", summary_text)
+    inputs = f"generate questions: {summary_text}"
+    outputs = qg_pipeline(inputs, max_length=256, do_sample=True, top_k=50, top_p=0.95, num_return_sequences=5)
 
-    try:
-        output = qg_pipeline(formatted_input, max_length=128, do_sample=False)
-        generated_text = output[0]['generated_text']
+    flashcards = []
+    for output in outputs:
+        text = output['generated_text']
+        print("Model output:", text)
 
-        qna_pairs = []
-        for line in generated_text.strip().split('\n'):
-            if ':' in line:
-                q, a = line.split(':', 1)
-                qna_pairs.append({
-                    "question": q.strip(),
-                    "answer": a.strip()
-                })
+        if "?" in text:
+            split_idx = text.find("?")
+            question = text[:split_idx + 1].strip()
+            answer = text[split_idx + 1:].strip()
 
-        return qna_pairs
+            if not answer or len(answer) < 5:
+                # Use QA model to get answer from context
+                try:
+                    result = qa_pipeline(question=question, context=summary_text)
+                    answer = result['answer']
+                except:
+                    answer = "Answer not found."
 
-    except Exception as e:
-        return [{"error": str(e)}]
+            flashcards.append({"question": question, "answer": answer})
+        else:
+            print("Skipped due to no '?':", text)
+
+    print("Generated flashcards:", flashcards)
+    return flashcards
