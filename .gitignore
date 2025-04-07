@@ -4,6 +4,7 @@ summaryenv/
 __pycache__/
 *.py[cod]
 *$py.class
+*.zip
 
 # C extensions
 *.so
@@ -11,6 +12,7 @@ __pycache__/
 # Distribution / packaging
 build/
 dist/
+.dist/
 *.egg-info/
 
 # Jupyter Notebook checkpoints
@@ -27,3 +29,11 @@ dist/
 venv/
 .env/
 .venv/
+myenv/
+
+
+# Simplification
+text-simplification/
+text-summarization-model1.0/
+cwishareddataset/
+*.txt 
