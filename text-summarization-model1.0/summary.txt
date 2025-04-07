@@ -1,0 +1,27 @@
+Software Engineering is the process of designing, developing, testing, and maintaining software. It is a systematic and disciplined approach to software development that aims to create high-quality, reliable, and maintainable software. The main goal of Software Engineering is to develop software applications for improving quality, budget, and time efficiency.
+
+Software engineering emerged as a discipline to address challenges in building reliable and efficient software. Key principles include modular design, systematic testing, and project management methodologies. Software engineering can help to reduce the cost of fixing bugs and adding new features later on. By involving customers in the development process and developing software that meets their needs, software engineering can increase customer satisfaction.
+
+In the software development life cycle, the basic project is designed with all the available information. In this stage, all the requirements for the target software are specified. This is fulfilled by utilizing SRS (Software Requirement Specification) After evaluating all the possible factors, the most practical and logical design is chosen for development.
+
+The waterfall model is used in situations where there is a need for a highly structured and systematic approach to software development. It can be effective in ensuring that large, complex projects are completed on time and within budget, with a high level of quality and customer satisfaction. The Waterfall Model has six phases which are: 1. Requirements, 2. Design, 3. Implementation, 4. Testing, 5. Deployment, 6. Maintenance.
+
+The Waterfall Model is a rigid and linear approach to software development. It is not well-suited for projects with changing or uncertain requirements. The V-model is a type of SDLC model where the process executes sequentially in a V- shape. Here are some applications of the SDLC waterfall model.
+
+The V-Model contains a testing phase that corresponds to each stage of the development process. The next phase starts only after completion of the previous phase i.e., for each development activity, there is a testing activity. The V- model is often used in safety: critical systems, such as aerospace and defence systems.
+
+The Prototyping Model is one of the most popularly used Software Development Life Cycle Models (SDLC models) This model is used when the customers do not know the exact project requirements beforehand. In this model, a prototype of the end product is first developed, tested, and refined as per customer feedback repeatedly till a final acceptable prototype is achieved.
+
+Prototyping can help reduce the risk of project failure by identifying potential issues and addressing them early in the process. Advantages of Prototyping Model: Customers get to see the partial product early in life cycle. Disadvantages: Costly concerning time as well as money. Poor Documentation due to continuously changing customer requirements.
+
+The Prototyping Model should be used when the requirements of the product are not clearly understood or are unstable. The Incremental Process Model is also known as the Successive version model. First, a simple working system implementing only a few basic features is built. Then thereafter many successive iterations/ versions are implemented and delivered to the customer.
+
+IBM first proposed the Rapid Application Development or RAD Model in the 1980s. The RAD model is a type of incremental process model in which there is a concise development cycle. Various phases in RAD are Requirements Gathering, Analysis and Planning, Design, Build or Construction, and finally Deployment.
+
+Rapid Application Development (RAD) model offers a powerful approach to software development, focusing on speed, flexibility, and stakeholder involvement. By enabling quick iterations and the use of reusable components, RAD ensures the fast delivery of functional prototypes, enhancing user satisfaction and project adaptability. However, its reliance on highly skilled developers, modular design, and automated tools presents challenges, particularly for projects with complex requirements.
+
+The Spiral Model is a risk-driven model, meaning that the focus is on managing risk through multiple iterations of the software development process. It is based on the idea of a spiral, with each iteration of the spiral representing a complete software development cycle, from requirements gathering and analysis to design, implementation, testing, and maintenance.
+
+The spiral model uses the approach of the Prototyping Model by building a prototype at the start of each phase as a risk-handling technique. spiral model can be considered as supporting the Evolutionary model – the iterations along the spiral can be. considered as evolutionary levels through which the complete system is built.
+
+Spiral Model is a valuable choice for software development projects where risk management is on high priority. Spiral Model deliver high-quality software by promoting risk identification, iterative development and continuous client feedback. The Spiral Model can be resource-intensive, as it requires a significant investment in planning, risk analysis, and evaluations.
