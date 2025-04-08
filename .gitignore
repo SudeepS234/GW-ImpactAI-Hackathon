@@ -3,6 +3,8 @@
 server/summaryenv
 
 node_modules
+flashcards/myenv/
+server/sumenv/ 
 
 # Logs
 logs
