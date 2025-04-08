@@ -8,7 +8,7 @@ from nltk.tokenize.punkt import PunktSentenceTokenizer
 
 nltk.download('punkt')
 
-ELEVENLABS_API_KEY = "sk_4fd3cdb2976c556538e86e7a7e84edea3cbae3c1e5446e09"
+ELEVENLABS_API_KEY = "ELEVEN_LABS_API_KEY"
 VOICE_ID = "EXAVITQu4vr4xnSDxMaL"
 API_URL = f"https://api.elevenlabs.io/v1/text-to-speech/{VOICE_ID}"
 
