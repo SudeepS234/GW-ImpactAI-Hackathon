@@ -56,9 +56,11 @@ function Upload() {
             summary: data.summary,
             fileName: uploadedFile.name,
             selectedOptions,
-            audioUrl: data.audio_url || null  // Ensure we send null if undefined
+            audioUrl: data.audio_url || null,
+            flashcards: data.flashcards || null  // 👈 Add this line
           }
         });
+        
       } else {
         console.error("Error:", data.error);
       }

@@ -5,9 +5,8 @@ import { motion } from 'framer-motion';
 function Summary() {
   const location = useLocation();
   const navigate = useNavigate();
-  const summary = location.state?.summary;
-  const fileName = location.state?.fileName;
-  const audioUrl = location.state?.audioUrl;
+  const { summary, fileName, audioUrl, flashcards, selectedOptions } = location.state || {};
+
 
   const audioRef = useRef(null);
   console.log("AUDIO URL:", audioUrl);
@@ -64,6 +63,24 @@ function Summary() {
             </audio>
           </div>
         )}
+
+        {selectedOptions?.flashcards && flashcards?.length > 0 && (
+          <div className="mt-8">
+            <h2 className="text-xl font-semibold mb-4">Flashcards</h2>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {flashcards.map((card, index) => (
+                <div
+                  key={index}
+                  className="bg-yellow-50 dark:bg-gray-900 p-4 rounded-lg shadow-md border border-yellow-200 dark:border-gray-700"
+                >
+                  <p className="font-semibold text-gray-800 dark:text-white">Q: {card.question}</p>
+                  <p className="mt-2 text-gray-600 dark:text-gray-300">A: {card.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
 
         <button
           onClick={() => navigate('/upload')}

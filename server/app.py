@@ -6,6 +6,11 @@ import os
 import tempfile
 import json
 from tts_model import generate_speech
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from flashcards.qna_generator import generate_qna
+
 
 app = Flask(__name__)
 CORS(app)
@@ -59,14 +64,17 @@ def summarize_pdf():
 
     file = request.files['file']
     options_json = request.form.get("options")
-
+    
     try:
         options = json.loads(options_json) if options_json else {}
+        
     except Exception as e:
         return jsonify({'error': f'Invalid options format: {e}'}), 400
 
     summary_enabled = options.get("summary", False)
     audio_enabled = options.get("audio", False)
+    flashcards_enabled = options.get("flashcards", False)
+
 
     # Save the uploaded file temporarily
     with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
@@ -83,6 +91,13 @@ def summarize_pdf():
         return jsonify({'summary': 'summary disabled'}), 200
 
     final_summary = summarize_large_text(text)
+    flashcards = []
+    if flashcards_enabled:
+        try:
+            flashcards = generate_qna(final_summary)
+        except Exception as e:
+            print("Flashcard generation error:", e)
+            flashcards = []
 
     audio_url = None
     if audio_enabled:
@@ -96,8 +111,12 @@ def summarize_pdf():
 
     return jsonify({
         'summary': final_summary,
-        'audio_url': audio_url  # ✅ Use snake_case to match frontend
+        'audio_url': audio_url,
+        'flashcards': flashcards  # ✅ Add this line
     }), 200
+
+
+
 
 @app.route('/audio/<filename>')
 def serve_audio(filename):
