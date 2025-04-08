@@ -2,7 +2,7 @@
 
 server/summaryenv
 
-node_modules
+client/node_modules
 flashcards/myenv/
 server/sumenv/ 
 .env
