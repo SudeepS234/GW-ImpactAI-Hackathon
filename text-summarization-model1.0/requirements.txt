@@ -1,0 +1,19 @@
+# Core ML Libraries
+torch==2.5.1
+torchvision==0.20.1
+torchaudio==2.5.1
+
+# Transformers for NLP
+transformers==4.39.3
+
+# NumPy - compatible version
+numpy==1.26.4
+
+# Flask or FastAPI (if you're using a backend)
+# flask==2.2.5
+# fastapi==0.110.0
+# uvicorn==0.29.0
+
+# Optional - useful tools
+sentencepiece==0.2.0
+scipy==1.13.0
