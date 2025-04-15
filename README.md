@@ -12,7 +12,7 @@ LearnAI is an accessible learning platform designed to empower **visually**, **h
 
 ## Screenshots
 
-| Home Page | Voice Navigation |
+| Home Page | Upload Page |
 |----------|------------------|
 | ![](homepage.jpg) | ![](uploadpage.jpg) |
 
