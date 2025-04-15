@@ -25,8 +25,10 @@ LearnAI is an accessible learning platform designed to empower **visually**, **h
 - 🎙️ **Voice Navigation** – Navigate the site using commands like:
   - “Go to Home”
   - “Go to Uploads”
-- 🧠 **Flash Card Generation** – For easier cognitive learning and retention.
-- ❓ **Quiz Generation** – Auto-generates questions based on uploaded notes *(integration pending)*.
+
+Yet to be integrated:
+- 🧠 **Flash Card Generation** – For easier cognitive learning and retention *(Successfully tested)*.
+- ❓ **Quiz Generation** – Auto-generates questions based on uploaded notes *(Successfully tested)*.
 - 📊 **User Dashboard (Frontend)** – Personalized learning path and user progress tracking.
 
 ---
